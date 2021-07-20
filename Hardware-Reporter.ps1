@@ -23,7 +23,7 @@
 $verboseoutput = 1 # 1 = on; 0 = off # When enabled more information is printed in console.
 
 if ($verboseoutput -eq '1') {
-clear   # clear screen on script start if verbose output is set to 1 (to aid in bug tracking)
+Clear-Host   # clear screen on script start if verbose output is set to 1 (to aid in bug tracking)
 }
 
 $datafilename = ($env:COMPUTERNAME + '.ini') # Set data filename to be the name of the computer
@@ -47,6 +47,11 @@ if ($verboseoutput -eq '1') {
 }
 
 # Mac Address
+$hostmac = (Get-WmiObject -Class Win32_NetworkAdapterConfiguration | Where-Object { $_.IpAddress -eq $hostip }).MACAddress
+if ($verboseoutput -eq '1') {
+    Write-Host 'Mac: ' $hostmac
+}
+
 # RAM Capacity
 # Hard Drive Capacity
 # Hard Drive Free Space

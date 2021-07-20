@@ -90,9 +90,25 @@ if ($verboseoutput -eq '1') {
 
 # RAM Max Capacity
 $maxram = (wmic memphysical get maxcapacity)
+if ($verboseoutput -eq '1') {
+    Write-Host 'Max Ram Supported: ' $maxram
+}
 
 # RAM Installed
+$ramtotal = (Get-CimInstance Win32_PhysicalMemory | Measure-Object -Property capacity -Sum).sum /1gb
+if ($verboseoutput -eq '1') {
+    Write-Host 'RAM Installed: ' $ramtotal
+}
+
 # Hard Drive Capacity
+$hd_size = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'" |
+Select-Object Size,FreeSpace
+$hd_capacity = [math]::Round($hd_size.Size /1gb)
+if ($verboseoutput -eq '1') {
+    Write-Host 'Hard Drive Capacity (GB): ' $hd_capacity
+}
+
+
 # Hard Drive Free Space
 # Hard Drive Make/Model
 # Motherboard Manufacturer

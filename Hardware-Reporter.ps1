@@ -41,6 +41,11 @@ if ($verboseoutput -eq '1') {
 }
 
 # IP Address
+$hostip = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias 'Ethernet*').IPAddress
+if ($verboseoutput -eq '1') {
+    Write-Host 'IP: ' $hostip
+}
+
 # Mac Address
 # RAM Capacity
 # Hard Drive Capacity

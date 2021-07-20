@@ -105,11 +105,16 @@ $hd_size = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'" |
 Select-Object Size,FreeSpace
 $hd_capacity = [math]::Round($hd_size.Size /1gb)
 if ($verboseoutput -eq '1') {
-    Write-Host 'Hard Drive Capacity (GB): ' $hd_capacity
+    Write-Host 'Hard Drive Capacity: ' $hd_capacity 'GB'
 }
 
 
-# Hard Drive Free Space
+# Hard Drive Free Space (in GB)
+$hd_free = [math]::Round($hd_size.FreeSpace /1gb)
+if ($verboseoutput -eq '1') {
+    Write-Host 'Hard Drive Free Space: ' $hd_free 'GB'
+}
+
 # Hard Drive Make/Model
 # Motherboard Manufacturer
 # Computer Manufacturer

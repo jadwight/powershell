@@ -8,7 +8,8 @@
 # Host Name
 # IP Address
 # Mac Address
-# RAM Capacity
+# RAM Max Capacity
+# RAM Installed
 # Hard Drive Capacity
 # Hard Drive Free Space
 # Hard Drive Make/Model
@@ -34,7 +35,6 @@ if ($verboseoutput -eq "1") {
 
 ### DATA COLLECTION ###
 
-
 $pcname = ($env:COMPUTERNAME) # Get Host Name
 if ($verboseoutput -eq '1') {
     Write-Host 'Host Name: ' $pcname # if verboseoutput is 1 then display output to screen
@@ -52,7 +52,8 @@ if ($verboseoutput -eq '1') {
     Write-Host 'Mac: ' $hostmac
 }
 
-# RAM Capacity
+# RAM Max Capacity
+# RAM Installed
 # Hard Drive Capacity
 # Hard Drive Free Space
 # Hard Drive Make/Model

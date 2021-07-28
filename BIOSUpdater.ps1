@@ -14,8 +14,8 @@ $repository_path = '\\server\share'
 
 # BIOS Library
 $bios_library = @(
-[pscustomobject]@{Model='Dell XPS420';BIOS='BIOS.exe'}
-[pscustomobject]@{Model='Inspiron 530s';BIOS='BIOS.exe'}
+[pscustomobject]@{Model='Dell XPS420';BIOS='BIOS\Dell XPS420\XPS420-A07.EXE'}
+[pscustomobject]@{Model='Inspiron 530s';BIOS='BIOS\Inspiron 530s\530_1018.EXE'}
 [pscustomobject]@{Model='Latitude 3580';BIOS='BIOS.exe'}
 [pscustomobject]@{Model='Latitude 7389';BIOS='BIOS.exe'}
 [pscustomobject]@{Model='Latitude E5530 non-vPro';BIOS='BIOS.exe'}
